@@ -43,3 +43,43 @@ void bubbleSort(float despesas[], int tamanho) {
                 trocou = 1;
             }
         }
+
+        /* Encerra antes se nenhuma troca tiver ocorrido. */
+        if (trocou == 0) {
+            break;
+        }
+    }
+}
+
+int main(void) {
+    float despesas[TAMANHO];
+    int i;
+
+    printf("====================================\n");
+    printf("     CONTROLE FINANCEIRO\n");
+    printf("====================================\n");
+    printf("Informe os valores de 10 despesas.\n\n");
+
+    /* Lê e valida os valores digitados pelo usuário. */
+    for (i = 0; i < TAMANHO; i++) {
+        printf("Digite o valor da despesa %d (R$): ", i + 1);
+
+        if (scanf("%f", &despesas[i]) != 1 || despesas[i] < 0) {
+            printf("Entrada invalida! Digite um valor nao negativo.\n");
+            return 1;
+        }
+    }
+
+    printf("\n--- DESPESAS ANTES DA ORDENACAO ---\n");
+    mostrarDespesas(despesas, TAMANHO);
+
+    bubbleSort(despesas, TAMANHO);
+
+    printf("\n--- DESPESAS APOS A ORDENACAO ---\n");
+    printf("Criterio: ordem decrescente (maior para menor).\n\n");
+    mostrarDespesas(despesas, TAMANHO);
+
+    printf("\nOrdenacao concluida com sucesso!\n");
+
+    return 0;
+}
