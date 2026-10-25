@@ -1,0 +1,58 @@
+## Teste 1 — Valores fora de ordem: Aprovado
+
+**Entrada (um valor por vez):**
+
+```text
+120
+45
+300
+80
+150
+25
+500
+60
+200
+100
+```
+
+**Resultado esperado após a ordenação:**
+
+```text
+500, 300, 200, 150, 120, 100, 80, 60, 45, 25
+```
+
+**Objetivo:** verificar a ordenação decrescente.
+
+## Teste 2 — Valores já ordenados: Aprovado
+
+**Entrada:**
+
+```text
+500
+400
+300
+200
+100
+90
+80
+70
+60
+50
+```
+
+**Resultado esperado:**
+
+```text
+500, 400, 300, 200, 100, 90, 80, 70, 60, 50
+```
+
+**Objetivo:** verificar se o programa mantém a ordem correta.
+
+
+## Teste 3 — Valor negativo: Aprovado
+
+**Entrada:** digite `-10` em qualquer uma das solicitações.
+
+**Resultado esperado:** o programa informa que a entrada é inválida e encerra sem realizar a ordenação.
+
+**Objetivo:** verificar a validação de valores negativos.
