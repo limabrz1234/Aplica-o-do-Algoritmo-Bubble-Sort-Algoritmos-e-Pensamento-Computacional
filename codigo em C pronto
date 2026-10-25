@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+#define TAMANHO 10
+
+/*
+ * Projeto: Controle Financeiro
+ * Objetivo: organizar 10 despesas do maior valor para o menor
+ * utilizando o algoritmo Bubble Sort.
+ */
+
+/* Mostra as despesas armazenadas no array. */
+void mostrarDespesas(float despesas[], int tamanho) {
+    int i;
+
+    for (i = 0; i < tamanho; i++) {
+        printf("%d. R$ %.2f\n", i + 1, despesas[i]);
+    }
+}
+
+/* Ordena as despesas em ordem decrescente com Bubble Sort. */
+void bubbleSort(float despesas[], int tamanho) {
+    int i, j;
+    float auxiliar;
+    int trocou;
+
+    /*
+     * Cada passagem coloca mais um dos menores valores
+     * na posição correta, ao final do array.
+     */
+    for (i = 0; i < tamanho - 1; i++) {
+        trocou = 0;
+
+        /*
+         * Compara elementos adjacentes e troca quando
+         * o elemento da esquerda é menor que o da direita.
+         */
+        for (j = 0; j < tamanho - 1 - i; j++) {
+            if (despesas[j] < despesas[j + 1]) {
+                auxiliar = despesas[j];
+                despesas[j] = despesas[j + 1];
+                despesas[j + 1] = auxiliar;
+
+                trocou = 1;
+            }
+        }
